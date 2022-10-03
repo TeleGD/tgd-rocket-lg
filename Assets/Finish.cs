@@ -27,7 +27,12 @@ public class Finish : MonoBehaviour {
 
 	void OnGUI(){
 		if (affFin) {
-			GUI.Box (new Rect (100, 100, Screen.width / 2, Screen.height / 8), "Temps du joueur 1 : " + tFin1 + "\nTemps du joueur 2 : " + tFin2 + "\nVictoire du joueur "+vict);
+			if(tFin1 < 17)
+            {
+				GUI.Box(new Rect(100, 100, Screen.width / 2, Screen.height / 8), "Temps du joueur 1 : " + tFin1 + "\nTemps du joueur 2 : " + tFin2 + "\nVictoire du joueur " + vict);
+			}
+            else { GUI.Box (new Rect (100, 100, Screen.width / 2, Screen.height / 8), "Temps du joueur 1 : " + tFin1 + "\nTemps du joueur 2 : " + tFin2 + "\nVictoire du joueur "+vict);}
+			
 		} else if (affInter) {
 			GUI.Box (new Rect (100, 100, Screen.width / 2, Screen.height / 8), "Au joueur 2 de jouer.");
 		}
